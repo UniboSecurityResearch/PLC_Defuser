@@ -24,7 +24,7 @@ Currently, we developed three datasets of PLC logic controlling the following ph
 
 * [Tennessee Eastman Process](https://github.com/Fortiphyd/GRFICSv2) (`GRFICS`)
 * [Secure Water Treatment Plant](https://itrust.sutd.edu.sg/testbeds/secure-water-treatment-swat/) (`SWAT`)
-* [Water Distribution](https://ieeexplore.ieee.org/abstract/document/10639995) (`Water_tank`)
+* [Water Tank](https://ieeexplore.ieee.org/abstract/document/10639995) (`Water_tank`)
 
 
 ### Cite us
