@@ -29,10 +29,10 @@ Currently, we developed three datasets of PLC logic controlling the following ph
 ### Code
 Our work code is located in the (`project`) folder, which contains the following folders:
 
-* [malicious]: it contains the formal model of the SWAT program, which includes a logic bomb.
-* [legitimate]: it contains the formal model of the original SWAT program, which doesn't include a logic bomb.
-* [intrepyd]: it contains the intrepyd libraries (https://github.com/formalmethods/intrepid)
-* [utils]: it contains the scripts that check the model meets our paper's requirements.
+* malicious: it contains the formal model of the SWAT program, which includes a logic bomb
+* legitimate: it contains the formal model of the original SWAT program, which doesn't include a logic bomb
+* intrepyd: it contains the intrepyd libraries (https://github.com/formalmethods/intrepid)
+* utils: it contains the scripts that check the model meets our paper's requirements
 
 #### How to verify requirements
 * clone repository
