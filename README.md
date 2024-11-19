@@ -35,12 +35,15 @@ Our work code is located in the `project` folder, which contains the following f
 * `utils`: it contains the scripts that check the model meets our paper's requirements
 
 #### How to verify requirements of the SWAT program
-* clone repository
-* cd project
-* docker build -t *name_your_image* .
-* docker run *name_your_image*
+```
+git clone https://github.com/UniboSecurityResearch/PLC_Defuser.git
+cd PLC_Defuser/project
+docker build -t plc-defuser .
+docker run plc-defuser
+```
 
-N.B. Docker checks the requirements of the malicious program by default. To check the requirements of the legitimate programme, change the programme to be executed in the Dockerfile: malicious/check_requirements.py to legitimate/check_requirements.py
+N.B. Docker checks the requirements of the malicious program by default. To check the requirements of the legitimate program, change the program to be executed in the Dockerfile: `malicious/check_requirements.py` to `legitimate/check_requirements.py`
+
 ### Cite us
 If you find this work interesting and use it in your academic research, please cite our paper!
 
