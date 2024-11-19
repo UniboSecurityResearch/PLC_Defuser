@@ -37,8 +37,8 @@ Our work code is located in the (`project`) folder, which contains the following
 #### How to verify requirements of the SWAT program
 * clone repository
 * cd project
-* docker build -t *name_your_images*
-* docker run *name_your_images*
+* docker build -t *name_your_image*
+* docker run *name_your_image*
 
 N.B. Docker checks the requirements of the malicious program by default. To check the requirements of the legitimate programme, change the programme to be executed in the Dockerfile: malicious/check_requirements.py to legitimate/check_requirements.py
 ### Cite us
