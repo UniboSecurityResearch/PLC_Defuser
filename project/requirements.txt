@@ -1,0 +1,7 @@
+numpy==1.24.0
+pandas==2.0.0
+antlr4-python3-runtime==4.9.1
+flask==2.2.3
+gunicorn==20.1.0
+matplotlib==3.7.0
+pylint
