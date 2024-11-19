@@ -34,7 +34,7 @@ Our work code is located in the (`project`) folder, which contains the following
 * intrepyd: it contains the intrepyd libraries (https://github.com/formalmethods/intrepid)
 * utils: it contains the scripts that check the model meets our paper's requirements
 
-#### How to verify requirements
+#### How to verify requirements of the SWAT program
 * clone repository
 * cd project
 * docker build -t *name_your_images*
