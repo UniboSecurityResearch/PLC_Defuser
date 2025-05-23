@@ -1241,7 +1241,7 @@
                 <INT/>
               </type>
             </variable>
-
+          </localVars>
         </interface>
         <body>
           <ST>
