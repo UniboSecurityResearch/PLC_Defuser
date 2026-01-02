@@ -57,7 +57,7 @@ FUNCTION_BLOCK EQ_0
     OUT : BOOL;
   END_VAR
   VAR
-    i : INT;
+    i : DINT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
 
@@ -66,11 +66,13 @@ FUNCTION_BLOCK EQ_0
   IF IN1=IN2 then
     OUT:=TRUE;
   END_IF;
-
-  i:=0;
+  
+  IN1 : = IN2/IN1;	
+  
   __CATCH(exc)
+  i:=IN1;
   WHILE i<4 do
-      OUT:=TRUE;
+	i := i * i;
   End_WHILE;
   __ENDTRY
 
@@ -78,7 +80,7 @@ END_FUNCTION_BLOCK
 
 PROGRAM PLC1
   VAR_INPUT
-    level : DINT;
+    level : REAL;
     request : DINT;
   END_VAR
   VAR_OUTPUT
@@ -90,8 +92,8 @@ PROGRAM PLC1
     high : BOOL;
     open_req : BOOL;
     close_req : BOOL;
-    low_1 : DINT := 40;
-    high_1 : DINT := 80;
+    low_1 : REAL := 40.0;
+    high_1 : REAL := 80.0;
     EQ_00 : EQ_0;
     _TMP_LE3_ENO : BOOL;
     _TMP_LE3_OUT : BOOL;

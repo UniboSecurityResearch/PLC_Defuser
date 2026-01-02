@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2021-02-24T14:42:08"/>
-  <contentHeader name="PLC1" modificationDateTime="2024-06-25T11:48:42">
+  <contentHeader name="PLC1" modificationDateTime="2026-01-02T17:12:49">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -22,7 +22,7 @@
           <inputVars>
             <variable name="level">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -41,7 +41,7 @@
             </variable>
             <variable name="real_value">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
             <variable name="high">
@@ -51,18 +51,18 @@
             </variable>
             <variable name="low_3">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="0"/>
+                <simpleValue value="0.0"/>
               </initialValue>
             </variable>
             <variable name="high_3">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="10"/>
+                <simpleValue value="10.0"/>
               </initialValue>
             </variable>
             <variable name="SUB_00">
@@ -1313,38 +1313,39 @@
           </LD>
         </body>
       </pou>
-            <pou name="SUB_0" pouType="functionBlock">
+      <pou name="SUB_0" pouType="functionBlock">
         <interface>
           <inputVars>
             <variable name="IN1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
           <outputVars>
             <variable name="real_value">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </outputVars>
           <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <REAL/>
               </type>
             </variable>
           </localVars>
         </interface>
         <body>
           <ST>
-            <xhtml:p><![CDATA[real_value := IN1 - 5;
-i:=0;
-if real_value = 0 then
-  while i<5 do
-    real_value:= 6;
-  end_while;
+            <xhtml:p><![CDATA[real_value := IN1 - 5.0;
+i:=IN1-15.0;
+if IN1 = 15.0 then
+  WHILE i<4.0 do
+    i := i * i;
+    real_value := 6.0;
+  End_WHILE;
 end_if;]]></xhtml:p>
           </ST>
         </body>

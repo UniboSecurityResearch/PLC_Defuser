@@ -57,7 +57,7 @@ FUNCTION_BLOCK EQ_0
     OUT : BOOL;
   END_VAR
   VAR
-    i : INT;
+    i : DINT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
 
@@ -66,13 +66,16 @@ FUNCTION_BLOCK EQ_0
   IF IN1=IN2 then
     OUT:=TRUE;
   END_IF;
-
+  
+  IN1 : = IN2/IN1;	
+  
   __CATCH(exc)
-  i:=0;	
+  i:=IN1;
   WHILE i<4 do
-      OUT:=TRUE;
+	i := i * i;
   End_WHILE;
-  __ENDTRY;
+  __ENDTRY
+
 END_FUNCTION_BLOCK
 
 PROGRAM PLC1

@@ -1234,7 +1234,7 @@
         </body>
       </pou>
           <pou name="OPEN_REQUEST" pouType="functionBlock">
-        <interface>
+          <interface>
           <inputVars>
             <variable name="IN1">
               <type>
@@ -1260,13 +1260,13 @@
                 <INT/>
               </type>
             </variable>
-			 <variable name="exc">
+			<variable name="exc">
               <type>
                 <derived name="__SYSTEM.ExceptionCode" />
               </type>
             </variable>
           </localVars>
-        </interface>
+          </interface>
         <body>
           <ST>
             <xhtml:p><![CDATA[__TRY
@@ -1274,10 +1274,12 @@ OUT:=FALSE;
 IF IN1=IN2 THEN
   OUT:=TRUE;
 END_IF;
+IN1 := IN2/IN1;
 __CATCH(exc)
-  i:=0;
+i:=IN1;
   while i<5 do
     OUT:=TRUE;
+    i:=i*i;
   end_while;
 __ENDTRY;]]></xhtml:p>
           </ST>

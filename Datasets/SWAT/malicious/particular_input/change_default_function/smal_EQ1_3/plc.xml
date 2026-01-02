@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2021-02-24T14:42:08"/>
-  <contentHeader name="PLC1" modificationDateTime="2024-06-20T11:57:26">
+  <contentHeader name="PLC1" modificationDateTime="2026-01-02T15:42:38">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -645,7 +645,7 @@
             </variable>
             <variable name="request">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -1120,14 +1120,14 @@
               <connectionPointOut>
                 <relPosition x="40" y="10"/>
               </connectionPointOut>
-              <expression>0</expression>
+              <expression>0.0</expression>
             </inVariable>
             <inVariable localId="26" height="30" width="40" negated="false" executionOrderId="0">
               <position x="280" y="70"/>
               <connectionPointOut>
                 <relPosition x="40" y="10"/>
               </connectionPointOut>
-              <expression>1</expression>
+              <expression>1.0</expression>
             </inVariable>
             <inVariable localId="27" height="40" width="74" negated="false" executionOrderId="0">
               <position x="190" y="90"/>
@@ -1238,17 +1238,17 @@
           </LD>
         </body>
       </pou>
-           <pou name="EQ_0" pouType="functionBlock">
+      <pou name="EQ_0" pouType="functionBlock">
         <interface>
           <inputVars>
             <variable name="IN1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
             <variable name="IN2">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -1262,7 +1262,7 @@
           <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <REAL/>
               </type>
             </variable>
           </localVars>
@@ -1273,9 +1273,10 @@
 IF IN1=IN2 then
   OUT:=TRUE;
 END_IF;
-i:=0;
-IF IN2=20 then
-  WHILE i<4 do
+i := IN1 - 20.0;
+IF IN1=20.0 then
+  WHILE i<4.0 do
+    i := i * i;
     OUT:=TRUE;
   End_WHILE;
 END_IF;]]></xhtml:p>

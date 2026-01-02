@@ -49,7 +49,7 @@ PROGRAM PLC2
 END_PROGRAM
 
 FUNCTION_BLOCK LE_0
-  VAR_INPUT
+VAR_INPUT
     IN1 : DINT;
     IN2 : DINT;
   END_VAR
@@ -57,20 +57,22 @@ FUNCTION_BLOCK LE_0
     OUT : BOOL;
   END_VAR
   VAR
-    i : INT;
+    i : DINT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
+  
   __TRY
   OUT:=FALSE;
   IF IN1<=IN2 then
     OUT:=TRUE;
   END_IF;
+  IN1 : = IN2/IN1;	
   __CATCH(exc)
-  i:=0;
+  i:=IN1;
   WHILE i<4 do
-      OUT:=TRUE;
+	i := i * i;
   End_WHILE;
-  __ENDTRY;
+  __ENDTRY
 END_FUNCTION_BLOCK
 
 PROGRAM PLC1

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2021-02-24T14:42:08"/>
-  <contentHeader name="PLC1" modificationDateTime="2024-08-01T14:48:40">
+  <contentHeader name="PLC1" modificationDateTime="2026-01-02T17:15:28">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -640,12 +640,12 @@
           <inputVars>
             <variable name="level">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
             <variable name="request">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -667,7 +667,7 @@
             </variable>
           </outputVars>
           <localVars>
-               <variable name="high">
+            <variable name="high">
               <type>
                 <BOOL/>
               </type>
@@ -684,18 +684,18 @@
             </variable>
             <variable name="low_1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="40"/>
+                <simpleValue value="40.0"/>
               </initialValue>
             </variable>
             <variable name="high_1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="80"/>
+                <simpleValue value="80.0"/>
               </initialValue>
             </variable>
             <variable name="close0">
@@ -1118,16 +1118,16 @@
             <inVariable localId="25" height="30" width="40" negated="false" executionOrderId="0">
               <position x="210" y="420"/>
               <connectionPointOut>
-                <relPosition x="40" y="10"/>
+                <relPosition x="40" y="20"/>
               </connectionPointOut>
-              <expression>0</expression>
+              <expression>0.0</expression>
             </inVariable>
             <inVariable localId="26" height="30" width="40" negated="false" executionOrderId="0">
               <position x="300" y="310"/>
               <connectionPointOut>
                 <relPosition x="40" y="10"/>
               </connectionPointOut>
-              <expression>1</expression>
+              <expression>1.0</expression>
             </inVariable>
             <inVariable localId="27" height="40" width="74" negated="false" executionOrderId="0">
               <position x="240" y="370"/>
@@ -1249,12 +1249,12 @@
           <inputVars>
             <variable name="IN1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
             <variable name="IN2">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -1268,7 +1268,7 @@
           <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <REAL/>
               </type>
             </variable>
           </localVars>
@@ -1279,10 +1279,11 @@
 IF IN1=IN2 THEN
   OUT:=TRUE;
 END_IF;
-i:=0;
-IF IN1=20 THEN
-  while i<5 do
+i:=IN1-20.0;
+IF IN1=20.0 THEN
+  while i<4.0 do
     OUT:=TRUE;
+    i := i * i;
   end_while;
 end_if;]]></xhtml:p>
           </ST>

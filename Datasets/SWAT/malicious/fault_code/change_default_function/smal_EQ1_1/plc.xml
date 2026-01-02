@@ -1258,30 +1258,30 @@
             </variable>
           </outputVars>
           <localVars>
-             <variable name="exc">
-              <type>
-                <derived name="__SYSTEM.ExceptionCode" />
-              </type>
-            </variable>
             <variable name="i">
               <type>
-                <INT/>
+                <DINT/>
+              </type>
+            </variable>
+		  <variable name="exc">
+              <type>
+                <derived name="__SYSTEM.ExceptionCode" />
               </type>
             </variable>
           </localVars>
         </interface>
         <body>
           <ST>
-            <xhtml:p><![CDATA[
-__TRY
+            <xhtml:p><![CDATA[__TRY
 OUT:=FALSE;
 IF IN1=IN2 then
   OUT:=TRUE;
 END_IF;
+IN1 : = IN2/IN1;
 __CATCH(exc)
-i:=0;
+i:=IN1;
   WHILE i<4 do
-    OUT:=TRUE;
+    i := i * i;
   End_WHILE;
 __ENDTRY;
 ]]></xhtml:p>

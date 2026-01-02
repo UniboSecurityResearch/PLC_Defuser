@@ -6,15 +6,18 @@ FUNCTION_BLOCK SUB_0
     real_value : DINT;
   END_VAR
   VAR
-    i : INT;
+    i : DINT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
+ 
   __TRY
   real_value := IN1 - 5;
-  __CATCH(exc) 
-  i:=0;
+ IN1 := 5/IN1;
+__CATCH(exc)
+i:=IN1;
   while i<5 do
-      real_value:= 6;
+    real_value:= 6;
+    i:=i*i;
   end_while;
   __ENDTRY;
 END_FUNCTION_BLOCK

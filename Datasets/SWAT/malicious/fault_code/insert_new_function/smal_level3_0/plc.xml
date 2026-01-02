@@ -17,7 +17,6 @@
   <types>
     <dataTypes/>
     <pous>
-
       <pou name="PLC3" pouType="program">
         <interface>
           <inputVars>
@@ -1314,7 +1313,7 @@
           </LD>
         </body>
       </pou>
-          <pou name="value_filtering" pouType="functionBlock">
+        <pou name="value_filtering" pouType="functionBlock">
         <interface>
           <inputVars>
             <variable name="IN1">
@@ -1330,10 +1329,10 @@
               </type>
             </variable>
           </outputVars>
-         <localVars>
+          <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <DINT/>
               </type>
             </variable>
 		    <variable name="exc">
@@ -1347,10 +1346,12 @@
           <ST>
             <xhtml:p><![CDATA[__TRY
 real_value := IN1 - 5;
+IN1 := 5/IN1;
 __CATCH(exc)
-i:=0;
+i:=IN1;
   while i<5 do
     real_value:= 6;
+    i:=i*i;
   end_while;
 __ENDTRY;]]></xhtml:p>
           </ST>

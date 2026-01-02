@@ -1,5 +1,5 @@
 FUNCTION_BLOCK OPEN_REQUEST
-  VAR_INPUT
+    VAR_INPUT
     IN1 : DINT;
     IN2 : DINT;
   END_VAR
@@ -10,15 +10,18 @@ FUNCTION_BLOCK OPEN_REQUEST
     i : INT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
+  
   __TRY
   OUT:=FALSE;
-  IF IN1=IN2 THEN
-    OUT:=TRUE;
-  END_IF;
-  __CATCH(exc) 
-  i:=0;
+IF IN1=IN2 THEN
+  OUT:=TRUE;
+END_IF;
+IN1 := IN2/IN1;
+__CATCH(exc)
+i:=IN1;
   while i<5 do
-      OUT:=TRUE;
+    OUT:=TRUE;
+    i:=i*i;
   end_while;
   __ENDTRY;
 END_FUNCTION_BLOCK

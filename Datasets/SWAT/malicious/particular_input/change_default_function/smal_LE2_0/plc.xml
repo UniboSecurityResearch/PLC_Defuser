@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <project xmlns:ns1="http://www.plcopen.org/xml/tc6_0201" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://www.plcopen.org/xml/tc6_0201">
   <fileHeader companyName="Unknown" productName="Unnamed" productVersion="1" creationDateTime="2021-02-24T14:42:08"/>
-  <contentHeader name="PLC1" modificationDateTime="2024-05-06T12:23:27">
+  <contentHeader name="PLC1" modificationDateTime="2026-01-02T16:32:59">
     <coordinateInfo>
       <fbd>
         <scaling x="10" y="10"/>
@@ -331,7 +331,7 @@
           <inputVars>
             <variable name="level">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -355,18 +355,18 @@
             </variable>
             <variable name="low_2">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="10"/>
+                <simpleValue value="10.0"/>
               </initialValue>
             </variable>
             <variable name="high_2">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
               <initialValue>
-                <simpleValue value="20"/>
+                <simpleValue value="20.0"/>
               </initialValue>
             </variable>
             <variable name="LE_00">
@@ -1245,12 +1245,12 @@
           <inputVars>
             <variable name="IN1">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
             <variable name="IN2">
               <type>
-                <DINT/>
+                <REAL/>
               </type>
             </variable>
           </inputVars>
@@ -1264,7 +1264,7 @@
           <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <REAL/>
               </type>
             </variable>
           </localVars>
@@ -1275,9 +1275,10 @@
 IF IN1<=IN2 then
   OUT:=TRUE;
 END_IF;
-i:=0;
-IF IN1=20 then
-  WHILE i<4 do
+i := IN1 - 13.0;
+IF IN1=13.0 then
+  WHILE i<4.0 do
+    i := i * i;
     OUT:=TRUE;
   End_WHILE;
 END_IF;]]></xhtml:p>

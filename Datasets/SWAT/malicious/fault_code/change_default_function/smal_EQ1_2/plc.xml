@@ -1241,7 +1241,7 @@
           </LD>
         </body>
       </pou>
-          <pou name="EQ_0" pouType="functionBlock">
+   <pou name="EQ_0" pouType="functionBlock">
         <interface>
           <inputVars>
             <variable name="IN1">
@@ -1265,10 +1265,10 @@
           <localVars>
             <variable name="i">
               <type>
-                <INT/>
+                <DINT/>
               </type>
             </variable>
-		    <variable name="exc">
+		  <variable name="exc">
               <type>
                 <derived name="__SYSTEM.ExceptionCode" />
               </type>
@@ -1278,17 +1278,18 @@
         <body>
           <ST>
             <xhtml:p><![CDATA[__TRY
-			OUT:=FALSE;
+OUT:=FALSE;
 IF IN1=IN2 then
   OUT:=TRUE;
 END_IF;
-
+IN1 : = IN2/IN1;
 __CATCH(exc)
-  i:=0;
+i:=IN1;
   WHILE i<4 do
-    OUT:=TRUE;
+    i := i * i;
   End_WHILE;
-__ENDTRY;]]></xhtml:p>
+__ENDTRY;
+]]></xhtml:p>
           </ST>
         </body>
       </pou>

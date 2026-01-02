@@ -7,22 +7,26 @@ FUNCTION_BLOCK EQ_0
     OUT : BOOL;
   END_VAR
   VAR
-    i : INT;
+    i : DINT;
     exc : __SYSTEM.ExceptionCode;
   END_VAR
+
   __TRY
   OUT:=FALSE;
   IF IN1=IN2 then
     OUT:=TRUE;
   END_IF;
-  __CATCH(exc) 
-  i:=0;
+  
+  IN1 : = IN2/IN1;	
+  
+  __CATCH(exc)
+  i:=IN1;
   WHILE i<4 do
-      OUT:=TRUE;
+	i := i * i;
   End_WHILE;
-  __ENDTRY;
-END_FUNCTION_BLOCK
+  __ENDTRY
 
+END_FUNCTION_BLOCK
 PROGRAM PLC3
   VAR_INPUT
     level : DINT;
