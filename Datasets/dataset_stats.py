@@ -3,6 +3,12 @@ import xml.etree.ElementTree as ET
 import pandas as pd
 from pathlib import Path
 
+# Remove any existing DataFrame display limits
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
 def count_rungs_and_lines(xml_path):
     # Parse XML
     tree = ET.parse(xml_path)
@@ -68,7 +74,7 @@ def summarize_stats(df):
     df['size_bin'] = pd.cut(df['size_kb'], bins=bins, labels=labels, right=False)
     
     # Aggregate statistics
-    summary = df.groupby('size_bin').agg(
+    summary = df.groupby('size_bin', observed=False).agg(
         num_files=('size_kb', 'count'),
         rung_min=('rungs', 'min'),
         rung_max=('rungs', 'max'),

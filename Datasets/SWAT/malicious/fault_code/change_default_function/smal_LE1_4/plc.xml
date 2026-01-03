@@ -1228,7 +1228,8 @@
           </LD>
         </body>
       </pou>
-     <pou name="LE_0" pouType="functionBlock">
+      <pou name="LE_0" pouType="functionBlock">
+        <interface>
          <inputVars>
             <variable name="IN1">
               <type>
