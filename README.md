@@ -47,4 +47,15 @@ N.B. Docker checks the requirements of the malicious program by default. To chec
 ### Cite us
 If you find this work interesting and use it in your academic research, please cite our paper!
 
-[![DOI](https://zenodo.org/badge/877386039.svg)](https://doi.org/10.5281/zenodo.14014819)
+```bibtex
+@article{rinieri2026plc,
+  title={PLC-Defuser: Detecting hidden Ladder Logic Bombs in PLCs via Control Flow Graph and model checking},
+  author={Rinieri, Lorenzo and Iacobelli, Antonio and Melis, Andrea and Prandini, Marco and Callegati, Franco},
+  journal={Computers \& Security},
+  pages={104983},
+  year={2026},
+  publisher={Elsevier}
+}
+```
+
+[[![DOI](https://zenodo.org/badge/877386039.svg)](https://doi.org/10.5281/zenodo.14014819)](https://doi.org/10.5281/zenodo.14014820)
