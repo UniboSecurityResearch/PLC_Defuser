@@ -16,6 +16,10 @@
 -->
 
 # PLC-Defuser
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14014820.svg)](https://doi.org/10.5281/zenodo.14014820)
+
+
 This repository contains the code and the dataset for the paper "PLC-Defuser: Detecting Hidden Ladder Logic Bombs in PLCs via Control Flow Graph and Model Checking".
 
 ### Datasets
@@ -27,6 +31,7 @@ Currently, we developed three datasets of PLC logic controlling the following ph
 * [Water Tank](https://ieeexplore.ieee.org/abstract/document/10639995) (`Water_tank`)
 
 ### Code
+
 Our work code is located in the `project` folder, which contains the following folders:
 
 * `malicious`: it contains the formal model of the SWAT program, which includes a logic bomb
@@ -35,6 +40,7 @@ Our work code is located in the `project` folder, which contains the following f
 * `utils`: it contains the scripts that check the model meets our paper's requirements
 
 #### How to verify requirements of the SWAT program
+
 ```
 git clone https://github.com/UniboSecurityResearch/PLC_Defuser.git
 cd PLC_Defuser/project
@@ -45,6 +51,7 @@ docker run plc-defuser
 N.B. Docker checks the requirements of the malicious program by default. To check the requirements of the legitimate program, change the program to be executed in the Dockerfile: `malicious/check_requirements.py` to `legitimate/check_requirements.py`
 
 ### Cite us
+
 If you find this work interesting and use it in your academic research, please cite our paper!
 
 ```bibtex
