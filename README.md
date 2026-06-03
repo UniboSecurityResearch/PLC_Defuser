@@ -64,5 +64,3 @@ If you find this work interesting and use it in your academic research, please c
   publisher={Elsevier}
 }
 ```
-
-[![DOI](https://zenodo.org/badge/877386039.svg)](https://doi.org/10.5281/zenodo.14014820)
