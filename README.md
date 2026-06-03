@@ -58,4 +58,4 @@ If you find this work interesting and use it in your academic research, please c
 }
 ```
 
-[[![DOI](https://zenodo.org/badge/877386039.svg)](https://doi.org/10.5281/zenodo.14014819)](https://doi.org/10.5281/zenodo.14014820)
+[![DOI](https://zenodo.org/badge/877386039.svg)](https://doi.org/10.5281/zenodo.14014820)
